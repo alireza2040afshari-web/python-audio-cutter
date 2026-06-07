@@ -1,8 +1,9 @@
 import tkinter as tk 
+from tkinter import tk
 
 
 def main() -> None:
-    print("ji")
+    
  
 
 if __name__ == "__main__":
