@@ -3,7 +3,8 @@ from tkinter import tk
 
 
 def main() -> None:
-    
+    root = tk.Tk()
+    root = root.withdraw()
  
 
 if __name__ == "__main__":
