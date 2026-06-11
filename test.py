@@ -14,13 +14,13 @@ def MP3_saver():
 
     return file_path
 
-def cut(audio):
+def cut(audio = ""):
     audio = AudioSegment.from_file(audio)
     start = int(input("Start second: "))
     end = int(input("End second: "))
     clip = audio[start * 1000:end * 1000]
     clip.export("output.mp3", format="mp3")
-    clip = cut(file_path)
+    clip = cut(clip)
 
     save_path = filedialog.asksaveasfilename(
     title="Save MP3",
