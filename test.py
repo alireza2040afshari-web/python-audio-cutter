@@ -2,6 +2,18 @@ import tkinter as tk
 from tkinter import filedialog
 from pydub import AudioSegment
 
+
+def MP3_saver():
+    root = tk.Tk()
+    root.withdraw()
+
+    file_path = filedialog.askopenfilename(
+        title = "Choose MP3",
+        filetypes = [("MP3 Files", "*.mp3")]
+    )
+
+    return file_path
+
 def cut(audio):
     audio = AudioSegment.from_file(audio)
     start = int(input("Start second: "))
@@ -19,12 +31,7 @@ def cut(audio):
 
 
 def main() -> None:
-    root = tk.Tk()
-    root = root.withdraw()
-    file_path = filedialog.askopenfilename(
-        title="choose MP3",
-        filetypes=[("MP3 Files", "*.mp3")]
-    )
+    file_path = MP3_saver()
     file_path = cut(file_path)
  
 
