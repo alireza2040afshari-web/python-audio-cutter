@@ -15,11 +15,28 @@ def MP3_saver():
     return file_path
 
 
+def get_seconds():
+    while True:
+        start = input("Start second: ")
+        end = input("End second: ")
+
+        if not start.isdigit() or not end.isdigit():
+            print("Please enter numbers only")
+            continue
+
+        start = int(start)
+        end = int(end)
+
+        if end <= start:
+            print("End must be greater than Start")
+            continue
+
+        return start, end
+    
 def cut_audio(file_path):
     audio = AudioSegment.from_file(file_path)
 
-    start = int(input("Start second: "))
-    end = int(input("End second: "))
+    start, end = get_seconds()
 
     clip = audio[start * 1000:end * 1000]
 
